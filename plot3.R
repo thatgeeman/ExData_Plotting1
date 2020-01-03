@@ -28,12 +28,11 @@ data$datetime<- paste(data$Date,data$Time)
 data$datetime<-dmy_hms(data$datetime)
 data$datetime <- strptime(data$datetime, '%d/%m/%Y %H:%M:%S')
 
-
+png("plot3.png", width = 480, height = 480)
 plot(data$datetime,data$Sub_metering_1, ylab = "Energy sub metering", xlab="", type = "n",col="black") # emplty
 lines(data$datetime,data$Sub_metering_1, ylab = "Energy sub metering", xlab="", type = "l",col="black")
 lines(data$datetime,data$Sub_metering_2, ylab = "Energy sub metering", xlab="", type = "l",col="red")
 lines(data$datetime,data$Sub_metering_3, ylab = "Energy sub metering", xlab="", type = "l",col="blue")
 legend("topright",col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = c(1, 1, 1))
-dev.copy(png,file="plot3.png")
 dev.off()
 

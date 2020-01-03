@@ -29,7 +29,7 @@ data$datetime<-dmy_hms(data$datetime)
 data$datetime <- strptime(data$datetime, '%d/%m/%Y %H:%M:%S')
 
 # plot data
+png("plot2.png", width = 480, height = 480)
 plot(data$datetime,data$Global_active_power, ylab = "Global Active Power (kilowatts)", xlab="", type = "l")
-dev.copy(png,file="plot2.png")
 dev.off()
 

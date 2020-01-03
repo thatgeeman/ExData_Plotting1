@@ -23,7 +23,7 @@ fileToRead <- "../course-project-1/household_power_consumption.txt"
 data <- readData(fileToRead) # function handling cleaning
 
 # plot data
+png("plot1.png", width = 480, height = 480)
 hist(data$Global_active_power,xlab = "Global Active Power (kilowatts)", col = "red", main = "Global Active Power")
-dev.copy(png,file="plot1.png")
 dev.off()
 

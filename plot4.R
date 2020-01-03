@@ -29,6 +29,7 @@ data$datetime<-dmy_hms(data$datetime)
 data$datetime <- strptime(data$datetime, '%d/%m/%Y %H:%M:%S')
 
 # plot data
+png("plot4.png", width = 480, height = 480)
 par(mfrow=c(2,2))
 plot(data$datetime,data$Global_active_power, ylab = "Global Active Power", xlab="", type = "l",col="black")
 plot(data$datetime,data$Voltage, ylab = "Voltage", xlab="datetime", type = "l",col="black")
@@ -37,10 +38,8 @@ plot(data$datetime,data$Sub_metering_1, ylab = "Energy sub metering", xlab="", t
 lines(data$datetime,data$Sub_metering_1, ylab = "Energy sub metering", xlab="", type = "l",col="black")
 lines(data$datetime,data$Sub_metering_2, ylab = "Energy sub metering", xlab="", type = "l",col="red")
 lines(data$datetime,data$Sub_metering_3, ylab = "Energy sub metering", xlab="", type = "l",col="blue")
-legend("top",xjust = 1,col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = c(1, 1, 1), bty = "n")
+legend("topright",xjust = 1,col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = c(1, 1, 1), bty = "n")
 
 plot(data$datetime,data$Global_reactive_power, ylab = "Global_reactive_power", xlab="datetime", type = "l",col="black")
-
-dev.copy(png,file="plot4.png")
 dev.off()
 
