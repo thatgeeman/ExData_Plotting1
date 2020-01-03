@@ -6,7 +6,7 @@ readData <- function(fileToRead){
   
   # read only required data
   data<-read.table(fileToRead, header = FALSE, skip = nskip, nrows = nread,sep = ';')
-  inames<-names(read.table("../course-project-1/household_power_consumption.txt", header = TRUE,nrows = 1))
+  inames<-names(read.table(fileToRead, header = TRUE,nrows = 1))
   inames<-strsplit(inames,".",fixed = TRUE)
   inames<-unsplit(inames,9)
   colnames(data)<-inames
