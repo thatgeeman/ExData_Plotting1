@@ -37,7 +37,7 @@ plot(data$datetime,data$Sub_metering_1, ylab = "Energy sub metering", xlab="", t
 lines(data$datetime,data$Sub_metering_1, ylab = "Energy sub metering", xlab="", type = "l",col="black")
 lines(data$datetime,data$Sub_metering_2, ylab = "Energy sub metering", xlab="", type = "l",col="red")
 lines(data$datetime,data$Sub_metering_3, ylab = "Energy sub metering", xlab="", type = "l",col="blue")
-legend("topright",col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = c(1, 1, 1), bty = "n")
+legend("top",xjust = 1,col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = c(1, 1, 1), bty = "n")
 
 plot(data$datetime,data$Global_reactive_power, ylab = "Global_reactive_power", xlab="datetime", type = "l",col="black")
 

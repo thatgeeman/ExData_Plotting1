@@ -28,7 +28,7 @@ data$datetime<- paste(data$Date,data$Time)
 data$datetime<-dmy_hms(data$datetime)
 data$datetime <- strptime(data$datetime, '%d/%m/%Y %H:%M:%S')
 
-# plot data
+
 plot(data$datetime,data$Sub_metering_1, ylab = "Energy sub metering", xlab="", type = "n",col="black") # emplty
 lines(data$datetime,data$Sub_metering_1, ylab = "Energy sub metering", xlab="", type = "l",col="black")
 lines(data$datetime,data$Sub_metering_2, ylab = "Energy sub metering", xlab="", type = "l",col="red")
